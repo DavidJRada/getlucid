@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Get Lucid</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+<%if(wake) { %>
+<% include ../partials/headwake.ejs%>
+<%} else {%>
+    <% include ../partials/headsleep.ejs%>
+<%}%>
     <body>
     <h1>Lucid Dreamer</h1>
 
