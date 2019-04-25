@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <h1>Lucid Dreamer</h1>
+    <h2>List of 10 most recent dreams</h2>
+
+    <a href="/dreamjournal/new">Add New Dream</a>
+
+    <br>
+
+    <div class='wrapper'>
+    <%for(let i=0; i<dreams.length; i++) { %>
+    <div class='container'>
+    <h1><a href='/dreamjournal/<%=dreams[i].id%>'> <%=dreams[i].title%></a></h1>
+    <p><%=dreams[i].content%></p>
+    <p>Tags: <%=dreams[i].tags%></p>
+  
+
+      </ul>
+    </div>
+    <%} %>
+    </div>
+    </body>
+</html>

@@ -1,9 +1,9 @@
 //Dependencies
 const express = require('express')
-const methodOverride = require('method-override');
 const mongoose = require('mongoose')
 const app = express()
 const db = mongoose.connection
+const methodOverride = require('method-override');
 
 //PORT
 const PORT = process.env.PORT || 3000
@@ -24,14 +24,26 @@ db.on('open', ()=> {
 
 
 //Middleware
-app.use(express.urlencoded({ extended: false}))
 app.use(methodOverride('_method')) //Allows delete and put method
+app.use(express.urlencoded({ extended: false}))
+app.use(express.static('public'))
+
 
 
 //Routes
+//Landing Page
 app.get('/', (req, res) => {
-    res.send('Hello World')
+    res.render('landingpage.ejs')
 })
+
+//Home
+app.get('/home', (req, res) => {
+    res.render('home.ejs')
+})
+
+//Dream Routes
+const dreamController = require('./controllers/dreams_controller.js')
+app.use('/dreamjournal', dreamController)
 
 app.listen(PORT, ()=> {
     console.log('listening on port', PORT)

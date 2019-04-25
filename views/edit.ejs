@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <h1>Lucid Dreamer</h1>
+    <h2>Edit Dream</h2>
+        <div class='container'>
+
+    <form action='/dreamjournal/<%=dream.id%>?_method=PUT' method='POST'>
+
+    <label for="title">Title</label>
+    <input type="text" name="title" value='<%=dream.title%>'>
+
+    <br>
+
+    <label for="content">Content</label>
+    <input type="textarea" name="content" value='<%=dream.content%>'>
+
+    <br>
+
+    <label for="tags">Tags</label>
+    <input type="text" name="tags" value='<%=dream.tags%>'>
+
+    <br>
+    <input type="submit" name="" value='Edit Dream'>
+    </div>
+    </form>
+
+    </body>
+</html>
