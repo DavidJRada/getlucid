@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 
 //Home
 app.get('/home/:choice', (req, res) => {
-    let sleepStatus = req.params.choice[0]
+    let sleepStatus = req.params.choice
     console.log(sleepStatus)
     res.render('home.ejs', {
         sleepStatus: sleepStatus
