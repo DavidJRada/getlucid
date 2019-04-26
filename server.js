@@ -33,12 +33,17 @@ app.use(express.static('public'))
 //Routes
 //Landing Page
 app.get('/', (req, res) => {
+    // console.log(req.params.choice)
     res.render('landingpage.ejs')
 })
 
 //Home
-app.get('/home', (req, res) => {
-    res.render('home.ejs')
+app.get('/home/:choice', (req, res) => {
+    let sleepStatus = req.params.choice[0]
+    console.log(sleepStatus)
+    res.render('home.ejs', {
+        sleepStatus: sleepStatus
+    })
 })
 
 //Dream Routes

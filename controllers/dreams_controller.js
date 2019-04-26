@@ -29,6 +29,7 @@ router.post('/', (req, res) => {
 //Show
 router.get('/:id', (req, res) => {
     Dream.findById(req.params.id, (err, foundDream) => {
+        console.log(req.params.id)
         if (err) console.log(err);
         res.render('show.ejs', {
             dream: foundDream

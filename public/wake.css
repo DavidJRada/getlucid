@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+
 body {
-    background-color:#f97104
+    background-image: linear-gradient(#3d9276, #eeee72);
+    background-repeat: no-repeat;
 }
+
+nav {
+    background-color: black;
+}
+
+/* h1 {
+    font-family: cursive;
+} */
