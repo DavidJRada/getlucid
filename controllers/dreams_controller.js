@@ -51,22 +51,23 @@ router.get('/:choice', (req, res) => {
 
 //Delete
 
-router.delete('/:id', (req, res) => {
+router.delete('/delete/:choice/:id', (req, res) => {
     Dream.findByIdAndRemove(req.params.id, (err, removedItem) => {
         if (err) console.log(err);
         console.log(removedItem)
-        res.redirect('/dreamjournal');  //redirect back to index route
+        res.redirect(`/dreamjournal/${req.params.choice}`);  //redirect back to index route
     })
 });
 
 //Edit (client)
 
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/:choice/edit', (req, res) => {
     Dream.findById(req.params.id, (err, foundDream) => { //find the fruit
         if (err) console.log(err);
         res.render(
             'edit.ejs',
             {
+                sleepStatus: req.params.choice,
                 dream: foundDream //pass in found fruit
             }
         );
@@ -75,11 +76,11 @@ router.get('/:id/edit', (req, res) => {
 
 //Edit (server)
 
-router.put('/:id', (req, res) => {
+router.put('/:id/:choice', (req, res) => {
     console.log(req.body)
     Dream.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel) => {
         if (err) console.log(err);
-        res.redirect('/dreamjournal');
+        res.redirect(`/dreamjournal/${req.params.choice}`);
     });
 });
 
