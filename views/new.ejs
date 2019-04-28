@@ -4,41 +4,43 @@
         <title>Get Lucid</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css"/>
+
+        <link rel="stylesheet" type="" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+        <link rel="stylesheet" type="text" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
    
 
     <% if (sleepStatus === 'w') {%>
-    <link href="/wake.css" rel="stylesheet"/>
+    <link href="/wake.css" rel="stylesheet">
 
     <%} else {%>
 
-    <link href="/sleep.css" rel="stylesheet"/>
+    <link href="/sleep.css" rel="stylesheet">
 
     <%}%>
 
  </head>
     <body>
-    <h1>Get Lucid</h1>
-    <h2>Add New Dream</h2>
-        <div class='container'>
+ <% include ../partials/nav.ejs%>
+
+    <div class='container'>
+    <h2 id='new-header'>Add A New Dream</h2>
 
     <form action='/dreamjournal/<%=sleepStatus%>' method='POST'>
-
-    <label for="title">Title</label>
-    <input type="text" name="title">
-
-    <br>
-
-    <label for="content">Content</label>
-    <input type="textarea" name="content">
-
-    <br>
-
-    <label for="tags">Tags</label>
-    <input type="text" name="tags">
-
-    <br>
-    <input type="submit" name="" value='Add New Dream'>
+        <div class='form-group'>
+            <label for="title">Title</label>
+            <input class='form-control' type="text" name="title">
+        </div>
+        <div class='form-group'>
+            <label for="content">Content</label>
+            <textarea class='form-control' type="textarea" name="content"></textarea>
+        </div>
+        <div class='form-group'>
+            <label for="tags">Tags</label>
+            <input class='form-control' type="text" name="tags">
+        </div>
+        <button id='submitBtn' class='btn' type="submit">Add New Dream</button>
+    </form>
     </div>
 
     </body>
