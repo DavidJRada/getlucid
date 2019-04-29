@@ -27,12 +27,14 @@
     <h2 id='new-header'>Add A New Dream</h2>
 
     <form action='/dreamjournal/<%=sleepStatus%>' method='POST'>
-        <div class='form-group'>
+        <div class='form-group-lg'>
             <label for="title">Title</label>
-            <input class='form-control' type="text" name="title">
+            <input class='form-control-lg' type="text" name="title">
         </div>
-        <div class='form-group'>
+        
+        <div class='form-group-lg'>
             <label for="content">Content</label>
+            <br>
             <textarea class='form-control' type="textarea" name="content"></textarea>
         </div>
         <div class='form-group'>
@@ -40,7 +42,13 @@
             <input class='form-control' type="text" name="tags">
         </div>
         <button id='submitBtn' class='btn' type="submit">Add New Dream</button>
+        <a class='btn' href='/dreamjournal/<%=sleepStatus%>'>Go Back</a>
+        <br>
     </form>
+        <br>
+
+
+
     </div>
 
     </body>

@@ -36,11 +36,17 @@
                 
                     <p class='card-text'><%=dreams[i].content%></p>
                     <p class='card-text'>Tags: <%=dreams[i].tags%></p>
-
+                    <br>
+                    <div class='two-btns'>
+                    <div>
                     <a class='btn' href="/dreamjournal/<%=dreams[i]._id; %>/<%=sleepStatus%>/edit">Edit</a>
+                    </div>
+                    <div>
                     <form action="/dreamjournal/delete/<%=sleepStatus%>/<%=dreams[i]._id%>?_method=DELETE" method="POST">
-                    <input type='submit' name='delete' value='Delete'/>
+                    <input class='btn' type='submit' name='delete' value='Delete'/>
                     </form>
+                    </div>
+                    </div>
                 </div>
                 </div>
           <%} %>

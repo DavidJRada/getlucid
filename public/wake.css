@@ -1,36 +1,70 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+/* GENERAL */
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 body {
     background-image: linear-gradient(#3d9276, #eeee72);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 nav {
     background-color: black;
+    font-family: 'Permanent Marker';
+    font-size: 50px;
+    font-weight: bold;
 }
 
+h2 {
+    font-family: 'Permanent Marker';
+    text-align: center;
+}
+
+/* CARDS */
 
 .card {
-    background-color: rgb(167, 164, 164);
+    margin-top: 20px;
+    background: radial-gradient(rgba(238, 189, 114, 1), rgba(238, 189, 114, .7));
+    border-radius: 10px;
 }
 
-#new-header {
-    text-align: center;
+.two-btns {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.card:hover {
+    transition: all .2s ease-in-out;
+    transform: scale(1.05);
+}
+
+.card-title>a {
+    color: rgb(65, 75, 189);
 }
 
 .card-columns {
     margin: 20px;
 }
 
+/* BUTTONS */
+
 #submitBtn {
     align-self: center;
 }
+
+.back {
+    position: absolute;
+    left: 77%;
+}
+
+/* FORM/INPUT*/
 
 textarea {
     width: 200px;
     height: 100px;
     max-width: 400px;
     max-height: 150px;
-   }
+}
 
 input[type=text] {
     width: 100%;
@@ -42,21 +76,14 @@ input[type=text] {
     box-sizing: border-box;
 }
 
-input[type=submit] {
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-
 label {
     color: black;
-    font-size: 15px;
+    font-family: cursive;
+    font-size: 22px;
 }
 
+/*Single Items*/
 
-/* h1 {
-    font-family: cursive;
-} */
+#new-header {
+    text-align: center;
+}

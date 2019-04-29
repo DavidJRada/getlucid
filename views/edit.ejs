@@ -16,43 +16,35 @@
 
     <%}%>
     </head>
-    <body>
-<% include ../partials/nav.ejs%>
+
+<body>
+    <% include ../partials/nav.ejs%>
 
 <div class='container'>
-        <h2>Edit Dream</h2>
+    <h2>Edit Dream</h2>
 
-    <div class='row'>
     <form action='/dreamjournal/<%=dream.id%>/<%=sleepStatus%>/?_method=PUT' method='POST'>
  
-    <label for="title">Title</label>
-    <br>
-    <input type="text" name="title" placeholder='<%=dream.title%>'>
-    </div>
-
-
-    <br>
-
-    <div class='row'>
-
-    <label class='content' for="content">Content</label>
-    <br>
-    <input type="textarea" name="content" value='<%=dream.content%>'>
-    
-    </div>
-
-    <br>
-    
-    <div class='row'>
-
-    <label for="tags">Tags</label>
-    <input type="text" name="tags" value='<%=dream.tags%>'>
-    </div>
-
-    <br>
-    <input type="submit" name="" value='Edit Dream'>
+        <div class='form-group-lg'>
+            <label for="title">Title</label>
+            <input class='form-control-lg' type="text" name="title" value='<%=dream.title%>'>
+        </div>
+        <br>
+        <div class='form-group-lg row'>
+            <label for="content">Content</label>
+            <div class='col-sm-10'>
+                <br>
+                <textarea class='form-control-lg' type="textarea" name="content" value='<%=dream.content%>'></textarea>
+            </div>
+        </div>
+        <div class='form-group-lg'>
+            <label for="tags">Tags</label>
+            <input class='form-control-lg' type="text" name="tags" value='<%=dream.tags%>'>
+        </div>
+            <input class='btn' type="submit" name="" value='Make Changes'>
+            <a class='back btn' href='/dreamjournal/<%=sleepStatus%>'>Go Back</a>
     </form>
 </div>
 
-    </body>
+</body>
 </html>

@@ -46,6 +46,23 @@ app.get('/home/:choice', (req, res) => {
     })
 })
 
+app.get('/more/:choice', (req, res) => {    
+    let sleepStatus = req.params.choice
+    console.log(sleepStatus)
+    res.render('more.ejs', {
+        sleepStatus: sleepStatus
+    })
+})
+
+app.get('/sleeptracker/:choice', (req, res) => {
+    let sleepStatus = req.params.choice
+    console.log(sleepStatus)
+    res.render('sleeptracker.ejs', {
+        sleepStatus: sleepStatus
+    })
+})
+
+
 //Dream Routes
 const dreamController = require('./controllers/dreams_controller.js')
 app.use('/dreamjournal', dreamController)
