@@ -1,11 +1,19 @@
 
 <nav>
     <div class='nav-wrapper'>
-    <a href='/home/<%=sleepStatus%>' class='brand-logo center left'>Get Lucid</a>
+    <a href='/home/<%=sleepStatus%>' class='brand-logo left'>Get Lucid</a>
     <ul id='nav-mobile' class='right'>
-        <li class='tab left'><a href='sleeptracker/<%=sleepStatus%>'>Sleep Tracker</a></li>
+        <%if(currentUser) {%>
+            <li class='tab'><form action='/sessions/<%=sleepStatus%>/?_method=DELETE' method="POST">
+            <input type='submit' value='Logout' class='waves-effect waves-light btn'>
+            </form></li>
+        <%} else {%>
+            <li class='tab'><a href= '/users/new/<%=sleepStatus%>'>Sign Up</a></li>
+            <li class='tab'><a href= '/sessions/new/<%=sleepStatus%>'>Log In</a></li>
+        <%}%>
+        <li class='tab '><a href='/sleeptracker/<%=sleepStatus%>'>Sleep Tracker</a></li>
         <li class='tab'><a href= '/dreamjournal/<%=sleepStatus%>'>Dream Journal</a></li>
         <li class='tab'><a href='/more/<%=sleepStatus%>'>Learn More</a></li>
         </ul>
         </div>
-    </nav>
+</nav>

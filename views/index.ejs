@@ -33,7 +33,10 @@
              <div class='card'>
              <div class='card-body'>
                     <h5 class='card-title'><a href='/dreamjournal/show/<%=dreams[i].id%>/<%=sleepStatus%>'><%=dreams[i].title%></a></h5>
-                
+
+                    <p class='card-text center'><%=dreams[i].date%></p>
+                            <br>
+
                     <p class='card-text'><%=dreams[i].content%></p>
                     <p class='card-text'>Tags: <%=dreams[i].tags%></p>
                     <br>
@@ -43,7 +46,7 @@
                     </div>
                     <div>
                     <form action="/dreamjournal/delete/<%=sleepStatus%>/<%=dreams[i]._id%>?_method=DELETE" method="POST">
-                    <input class='btn' type='submit' name='delete' value='Delete'/>
+                    <input class='btn' id='delete-btn' type='submit' name='delete' value='Delete'/>
                     </form>
                     </div>
                     </div>

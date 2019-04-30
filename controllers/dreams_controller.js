@@ -2,12 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Dream = require('../models/dreams.js')
 
+
 //New
 router.get(`/new/:choice`, (req, res) => {
     let sleepStatus = req.params.choice
     console.log(sleepStatus)
     res.render('new.ejs', {
-        sleepStatus: sleepStatus
+        sleepStatus: sleepStatus,
+        currentUser: req.session.currentUser
     })
 })
 //Create(Server)
@@ -26,7 +28,8 @@ router.get('/show/:id/:choice', (req, res) => {
         if (err) console.log(err);
         res.render('show.ejs', {
             sleepStatus: req.params.choice,
-            dream: foundDream
+            dream: foundDream,
+            currentUser: req.session.currentUser
         })
     })
 })
@@ -38,7 +41,8 @@ router.get('/:choice', (req, res) => {
         if (err) console.log(err);
         res.render('index.ejs', {
             sleepStatus: req.params.choice,
-            dreams: allDreams
+            dreams: allDreams,
+            currentUser: req.session.currentUser
         })
     })
 })
@@ -62,13 +66,14 @@ router.delete('/delete/:choice/:id', (req, res) => {
 //Edit (client)
 
 router.get('/:id/:choice/edit', (req, res) => {
-    Dream.findById(req.params.id, (err, foundDream) => { //find the fruit
+    Dream.findById(req.params.id, (err, foundDream) => {
         if (err) console.log(err);
         res.render(
             'edit.ejs',
             {
                 sleepStatus: req.params.choice,
-                dream: foundDream //pass in found fruit
+                dream: foundDream,
+                currentUser: req.session.currentUser
             }
         );
     });
