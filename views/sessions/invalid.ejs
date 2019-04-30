@@ -23,6 +23,8 @@
  <% include ../../partials/nav.ejs%>
     <div class="container">
         <h1>Log In User</h1>
+         <p class='error'>** Invalid Login Credentials **</p>
+
           <form class="col s12" action='/sessions/<%=sleepStatus%>' method='POST'>
             <div class="form-group">
                 <input placeholder="Username" id="username" type="text" class="validate form-control col-6" name="username" required>

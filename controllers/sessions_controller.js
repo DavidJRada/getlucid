@@ -18,17 +18,27 @@ sessions.post('/:choice', (req, res) => {
     User.findOne({ username: req.body.username }, (err, foundUser) => {
         console.log(foundUser + 'foundUser')
         if (err) {
-            console.log(err)
+            res.redirect(`/sessions/invalid/${sleepStatus}`)
         }
         if (bcrypt.compareSync(req.body.password, foundUser.password)) {
             req.session.currentUser = foundUser;
             res.redirect(`/home/${sleepStatus}`);
         } else {
-            res.send(`<a href="/home/${sleepStatus}">Wrong password go back</a>`)
+            res.redirect(`/sessions/invalid/${sleepStatus}`)
+
         }
 
     })
 })
+
+sessions.get('/invalid/:choice', (req, res) => {
+    res.render('sessions/invalid.ejs', {
+        sleepStatus: req.params.choice,
+        currentUser: req.params.currentUser
+    })
+})
+
+
 
 sessions.delete('/:choice', (req, res) => {
     let sleepStatus = req.params.choice

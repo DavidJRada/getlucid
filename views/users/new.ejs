@@ -20,28 +20,23 @@
 
  </head>
     <body>
- <% include ../../partials/nav.ejs%>
+ <% include ../../partials/nav.ejs %>
 
-<div class="container">
+<div class="container-fluid">
         <h1>Create User</h1>
-        <div class="row">
-          <form class="col s12" action="/users/<%=sleepStatus%>" method="POST">
-            <div class="row">
-              <div class="input-field col s6">
-                <label for="username">User Name</label>
-                <br>
-                <input id="username" type="text" class="validate" name="username" required>
+          <form action="/users/<%=sleepStatus%>" method="POST">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" type="text" class="validate form-control col-6" name="username">
               </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
+              <div class="form-group">
                 <label for="password">Password</label>
-                <input id="password" type="password" class="validate" name="password" required>
+                <input id="password" type="password" class="validate form-control col-6" name="password">
               </div>
-            </div>
             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             </button>
           </form>
         </div>
+    
     </body>
 </html>

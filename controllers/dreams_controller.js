@@ -37,6 +37,7 @@ router.get('/show/:id/:choice', (req, res) => {
 //Index
 router.get('/:choice', (req, res) => {
     sleepStatus = req.params.choice
+    let currentUser = req.session.currentUser
     Dream.find({}, (err, allDreams) => {
         if (err) console.log(err);
         res.render('index.ejs', {

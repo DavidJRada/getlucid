@@ -5,8 +5,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" type="" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
-        <link rel="stylesheet" type="text" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+       <link rel="stylesheet" type="text" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+       <link rel="stylesheet" type="" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+        
 
    
 
@@ -23,24 +24,28 @@
     <body>
  <% include ../partials/nav.ejs%>
 
-    <div class='container'>
     <h2 id='new-header'>Add A New Dream</h2>
+    <div class='container'>
 
-    <form action='/dreamjournal/<%=sleepStatus%>' method='POST'>
-        <div class='form-group-lg'>
-            <label for="title">Title</label>
-            <input class='form-control-lg' type="text" name="title">
+        <form action='/dreamjournal/<%=sleepStatus%>' method='POST'>
+        <div class='form-group'> 
+            <span>Title</span>
+            <input class='form-control col-6' type="text" name="title">
         </div>
-        
-        <div class='form-group-lg'>
-            <label for="content">Content</label>
-            <br>
+        <br>
+        <div class='form-group'>
+            <span>Content</span>
             <textarea class='form-control' type="textarea" name="content"></textarea>
         </div>
+        <br>
+        <br>
         <div class='form-group'>
-            <label for="tags">Tags</label>
+            <span>Tags</span>
             <input class='form-control' type="text" name="tags">
+            <small id='tagsHelp' class='form-text text-muted'>Add dream tags separated by commas</small>
         </div>
+        <br>
+        <br>
         <button id='submitBtn' class='btn' type="submit">Add New Dream</button>
         <a class='btn' href='/dreamjournal/<%=sleepStatus%>'>Go Back</a>
         <br>

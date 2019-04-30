@@ -31,7 +31,7 @@
 <div class=" card-columns">
         <%for(let i=0; i<dreams.length; i++) { %>
              <div class='card'>
-             <div class='card-body'>
+                <div class='card-body'>
                     <h5 class='card-title'><a href='/dreamjournal/show/<%=dreams[i].id%>/<%=sleepStatus%>'><%=dreams[i].title%></a></h5>
 
                     <p class='card-text center'><%=dreams[i].date%></p>
@@ -41,17 +41,17 @@
                     <p class='card-text'>Tags: <%=dreams[i].tags%></p>
                     <br>
                     <div class='two-btns'>
-                    <div>
-                    <a class='btn' href="/dreamjournal/<%=dreams[i]._id; %>/<%=sleepStatus%>/edit">Edit</a>
-                    </div>
-                    <div>
-                    <form action="/dreamjournal/delete/<%=sleepStatus%>/<%=dreams[i]._id%>?_method=DELETE" method="POST">
-                    <input class='btn' id='delete-btn' type='submit' name='delete' value='Delete'/>
-                    </form>
-                    </div>
+                        <div>
+                            <a class='btn' href="/dreamjournal/<%=dreams[i]._id; %>/<%=sleepStatus%>/edit">Edit</a>
+                        </div>
+                        <div>
+                            <form action="/dreamjournal/delete/<%=sleepStatus%>/<%=dreams[i]._id%>?_method=DELETE" method="POST">
+                            <input class='btn' id='delete-btn' type='submit' name='delete' value='Delete'/>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                </div>
+            </div>
           <%} %>
 </div>
 

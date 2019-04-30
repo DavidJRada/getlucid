@@ -82,7 +82,7 @@ input, textarea {
 
 
 textarea {
-    vertical-align: top;
+    vertical-align: bottom;
     height: 5em;
 }
 
