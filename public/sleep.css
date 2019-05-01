@@ -5,6 +5,7 @@ body {
     background-image: linear-gradient(#6e2e80, #1b1f38);
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
 }
 
 nav {
@@ -39,6 +40,11 @@ h2 {
 
 .card-columns {
     margin: 20px;
+}
+
+.card-text {
+    z-index: 2;
+    opacity: 1;
 }
 
 /* BUTTONS */
@@ -105,4 +111,7 @@ label {
 }
 #delete-btn {
     width: 100%;
+}
+ol {
+    margin-left: 0px;
 }

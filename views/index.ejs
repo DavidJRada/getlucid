@@ -21,7 +21,10 @@
  </head>
     <body>
  <% include ../partials/nav.ejs%>
-
+ 
+<%if(!currentUser) { %>
+    <h1 class='error'>Please Login above to access your dream journal</h1>
+<%} else {%>
     <a class='waves-effect waves-light btn' href="/dreamjournal/new/<%=sleepStatus%>">Add New Dream</a>
 
 
@@ -54,6 +57,6 @@
             </div>
           <%} %>
 </div>
-
+<%}%>
 </body>
 </html>

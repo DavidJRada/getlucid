@@ -4,6 +4,7 @@
     <a href='/home/<%=sleepStatus%>' class='brand-logo left'>Get Lucid</a>
     <ul id='nav-mobile' class='right'>
         <%if(currentUser) {%>
+            <li class='tab username'>Welcome <%=currentUser.username%></li>
             <li class='tab'><form action='/sessions/<%=sleepStatus%>/?_method=DELETE' method="POST">
             <input type='submit' value='Logout' class='waves-effect waves-light btn'>
             </form></li>
