@@ -16,24 +16,40 @@
 
     <%}%>
     </head>
+  <% include ../partials/nav.ejs%>
+
+<%if(!currentUser) { %>
+    <h1 class='error'>Please Login above to access your dream journal</h1>
+<%} else {%>
 
     <body>
-    <a href="/dreamjournal/<%=sleepStatus%>"><button>Go Back</button></a>
+    <a class ='waves-effect waves-light btn' href="/dreamjournal/<%=sleepStatus%>">Go Back</a>
     <br>
-    <div class = 'container'>
-    <h1><%=dream.title%></h1>
-    <p><%=dream.content%></p>
-    <p>Tags: <%=dream.tags%></p>
+<div class='container'>
+    <div class = 'card'>
+        <div class='card-body center'>
+            <h5 class='card-title'><%=dream.title%></h5>
+            <p class='card-text'><%=dream.date%></p>
+            <p class='card-text'><%=dream.content%></p>
+            <p class='card-text'><%=dream.tags%></p>
+            <br>
+            <div class='two-btns'>
+                <div>
+                    <a class='btn' href="/dreamjournal/<%=dream._id; %>/<%=sleepStatus%>/edit">Edit</a>
+                </div>
+                <div>
+                    <form action="/dreamjournal/delete/<%=sleepStatus%>/<%=dream._id%>?_method=DELETE" method="POST">
+                    <input class='btn' id='delete-btn' type='submit' name='delete' value='Delete'/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-        
-    <form action="/dreamjournal/delete/<%=sleepStatus%>/<%=dream._id%>?_method=DELETE" method="POST">
-    <input type='submit' name='delete' value='Delete'/>
-    </form>
 
-
-    <a href="/dreamjournal/<%=dream._id; %>/<%=sleepStatus%>/edit"><button>Edit</button></a>    
   
-    
+<%}%>
     
     </body>
 </html>

@@ -30,21 +30,23 @@ h4 {
 
 .card {
     margin-top: 20px;
-    /* background-image: url('https://previews.123rf.com/images/ludibarrs/ludibarrs1602/ludibarrs160200049/53874950-psychedelic-colors.jpg'); opacity: .5; */
-    background: radial-gradient(rgba(238, 189, 114, 1), rgba(238, 189, 114, .7));
+    background-image: url('/darkness.png');
+    background-blend-mode: multiply;
+    /* background: radial-gradient(rgba(238, 189, 114, 1), rgba(238, 189, 114, .7)); */
     border-radius: 10px;
-    
+    color: white;
 }
 
 .two-btns {
+    border: .5px solid gray;
+    padding: 2px;
+    border-radius: 10px;
     display: flex;
-    justify-content: space-between;
-    width: 45%;
+    justify-content: space-around;
+    width: 100%;
 }
 
-.card-title>a {
-    color: rgb(14, 23, 122);
-}
+
 
 .card-columns {
     margin: 20px;

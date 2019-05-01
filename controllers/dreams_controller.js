@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Dream = require('../models/dreams.js')
+const moment = require('moment')
 
 
 //New
@@ -14,6 +15,9 @@ router.get(`/new/:choice`, (req, res) => {
 })
 //Create(Server)
 router.post('/:choice', (req, res) => {
+    let dream = req.body
+    console.log(dream)
+    dream.user = req.session.currentUser.username
     Dream.create(req.body, (err, createdDream) => {
         console.log(createdDream)
         if (err) console.log(err);
@@ -24,8 +28,8 @@ router.post('/:choice', (req, res) => {
 //Show
 router.get('/show/:id/:choice', (req, res) => {
     Dream.findById(req.params.id, (err, foundDream) => {
-        console.log(req.params.id)
         if (err) console.log(err);
+        foundDream.date = moment(foundDream.date).format('LLLL')
         res.render('show.ejs', {
             sleepStatus: req.params.choice,
             dream: foundDream,
@@ -38,8 +42,8 @@ router.get('/show/:id/:choice', (req, res) => {
 router.get('/:choice', (req, res) => {
     sleepStatus = req.params.choice
     let currentUser = req.session.currentUser
-    let search = 
-    Dream.find({}, (err, allDreams) => {
+    console.log(currentUser)
+    Dream.find({user: currentUser.username}, (err, allDreams) => {
         if (err) console.log(err);
         res.render('index.ejs', {
             sleepStatus: req.params.choice,
@@ -50,19 +54,15 @@ router.get('/:choice', (req, res) => {
 })
 
 
-//Search
-
-// router.post('/search/:choice', (req, res) => {
-//     console.log(req.body.tag)
-//     res.send('landingpage.ejs')
-// })
-
 router.get('/search/:choice', (req, res) => {
     sleepStatus = req.params.choice
     let currentUser = req.session.currentUser;
-    console.log(req.query.search)
+    let tagSearch = req.query.search
+    console.log(tagSearch)
+    tagSearch.split(',')
+    console.log(tagSearch)
     
-    Dream.find({ tags: req.query.search}, 'title content tags', (err, allTags) => {
+    Dream.find({ tags: req.query.search}, (err, allTags) => {
         console.log(allTags)
         if (err) console.log(err);
         res.render('search.ejs', {
