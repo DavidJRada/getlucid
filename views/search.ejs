@@ -1,0 +1,69 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Get Lucid</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+<link rel="stylesheet" type="" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+
+   
+
+    <% if (sleepStatus === 'w') {%>
+    <link href="/wake.css" rel="stylesheet">
+
+    <%} else {%>
+
+    <link href="/sleep.css" rel="stylesheet">
+
+    <%}%>
+
+ </head>
+    <body>
+ <% include ../partials/nav.ejs%>
+
+<%if(!currentUser) { %>
+    <h1 class='error'>Please Login above to access your dream journal</h1>
+<%} else {%>
+
+<div class='container'>
+    <a class='waves-effect waves-light btn' href="/dreamjournal/new/<%=sleepStatus%>">Add New Dream</a>
+
+    <form class="form-inline md-form form-sm mt-0" action='/dreamjournal/search/<%=sleepStatus%>/' method='GET'>
+    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" name='tag' aria-label="Search">
+    </form>
+</div>
+
+
+
+
+
+<div class=" card-columns">
+        <%for(let i=0; i<tags.length; i++) { %>
+             <div class='card'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href='/dreamjournal/show/<%=tags[i].id%>/<%=sleepStatus%>'><%=tags[i].title%></a></h5>
+
+                    <p class='card-text center'><%=tags[i].date%></p>
+                            <br>
+
+                    <p class='card-text'><%=tags[i].content%></p>
+                    <p class='card-text'>Tags: <%=tags[i].tags%></p>
+                    <br>
+                    <div class='two-btns'>
+                        <div>
+                            <a class='btn' href="/dreamjournal/<%=tags[i]._id; %>/<%=sleepStatus%>/edit">Edit</a>
+                        </div>
+                        <div>
+                            <form action="/dreamjournal/delete/<%=sleepStatus%>/<%=tags[i]._id%>?_method=DELETE" method="POST">
+                            <input class='btn' id='delete-btn' type='submit' name='delete' value='Delete'/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <%} %>
+</div>
+<%}%>
+</body>
+</html>

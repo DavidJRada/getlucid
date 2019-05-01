@@ -38,6 +38,7 @@ router.get('/show/:id/:choice', (req, res) => {
 router.get('/:choice', (req, res) => {
     sleepStatus = req.params.choice
     let currentUser = req.session.currentUser
+    let search = 
     Dream.find({}, (err, allDreams) => {
         if (err) console.log(err);
         res.render('index.ejs', {
@@ -49,6 +50,28 @@ router.get('/:choice', (req, res) => {
 })
 
 
+//Search
+
+// router.post('/search/:choice', (req, res) => {
+//     console.log(req.body.tag)
+//     res.send('landingpage.ejs')
+// })
+
+router.get('/search/:choice', (req, res) => {
+    sleepStatus = req.params.choice
+    let currentUser = req.session.currentUser;
+    console.log(req.query.search)
+    
+    Dream.find({ tags: req.query.search}, 'title content tags', (err, allTags) => {
+        console.log(allTags)
+        if (err) console.log(err);
+        res.render('search.ejs', {
+            sleepStatus: req.params.choice,
+            tags: allTags,
+            currentUser: req.session.currentUser,
+        })
+    })
+})
 
 
 
