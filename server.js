@@ -44,7 +44,6 @@ app.use(session({
 
 
 app.get('/', (req, res) => {
-    // console.log(req.params.choice)
     res.render('landingpage.ejs')
 })
 

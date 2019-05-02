@@ -41,16 +41,20 @@ router.get('/show/:id/:choice', (req, res) => {
 //Index
 router.get('/:choice', (req, res) => {
     sleepStatus = req.params.choice
-    let currentUser = req.session.currentUser
-    console.log(currentUser)
-    Dream.find({user: currentUser.username}, (err, allDreams) => {
-        if (err) console.log(err);
-        res.render('index.ejs', {
-            sleepStatus: req.params.choice,
-            dreams: allDreams,
-            currentUser: req.session.currentUser
+    if (!req.session.currentUser) {
+        res.redirect(`/sessions/invalid/${sleepStatus}`)
+    } else {
+        let currentUser = req.session.currentUser
+        console.log(currentUser)
+        Dream.find({ user: currentUser.username }, (err, allDreams) => {
+            if (err) console.log(err);
+            res.render('index.ejs', {
+                sleepStatus: req.params.choice,
+                dreams: allDreams,
+                currentUser: req.session.currentUser
+            })
         })
-    })
+    }
 })
 
 
@@ -61,8 +65,8 @@ router.get('/search/:choice', (req, res) => {
     console.log(tagSearch)
     tagSearch.split(',')
     console.log(tagSearch)
-    
-    Dream.find({ tags: req.query.search}, (err, allTags) => {
+
+    Dream.find({ tags: req.query.search }, (err, allTags) => {
         console.log(allTags)
         if (err) console.log(err);
         res.render('search.ejs', {

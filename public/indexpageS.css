@@ -2,13 +2,15 @@
 
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
-html {
-    background-image: linear-gradient(#3d9276, #eeee72);
+
+ body { 
+    background-image: linear-gradient(#6e2e80, #1b1f38);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100%;
     font-family: 'PT sans';
-}
+    color: white;
+} 
 
 nav {
     background-color: black;
@@ -21,7 +23,6 @@ h2 {
     font-family: 'Permanent Marker';
     text-align: center;
 }
-
 h4 {
     text-align: center;
 }
@@ -34,7 +35,7 @@ h4 {
     background-blend-mode: multiply;
     /* background: radial-gradient(rgba(238, 189, 114, 1), rgba(238, 189, 114, .7)); */
     border-radius: 10px;
-    color: white;
+    
 }
 
 .two-btns {
@@ -44,6 +45,10 @@ h4 {
     display: flex;
     justify-content: space-around;
     width: 100%;
+}
+
+.card-title>a {
+    color: rgb(65, 75, 189);
 }
 
 .card-columns {
@@ -62,8 +67,9 @@ h4 {
 }
 
 .btn {
+    background-color: rgb(12, 105, 90);
     border-radius: 7px;
-    color: black;
+    color: #ea6390;
 }
 
 .btn:hover {
@@ -122,16 +128,16 @@ textarea {
 }
 
 ol>li {
+    margin-left: -20px;
     list-style-position: inside;
-    font-weight: bold;
+    text-align: left;
+}
+.ol-header {
     text-align: center;
+    margin-left: -20px;
 }
 
 .username {
     font-size: 16px;
     margin-right: 10px;
-}
-
-.more-content {
-    text-align: center;
 }

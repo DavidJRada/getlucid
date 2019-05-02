@@ -14,7 +14,7 @@ sessions.get('/new/:choice', (req, res) => {
 sessions.post('/:choice', (req, res) => {
     let sleepStatus = req.params.choice
     // console.log(req.session.currentUser)
-    console.log(req.body, 'req.body')
+    console.log(req.body.username, 'req.body')
     User.findOne({ username: req.body.username }, (err, foundUser) => {
         console.log(foundUser + 'foundUser')
         if (err) {
