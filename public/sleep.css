@@ -30,21 +30,23 @@ h4 {
 /* CARDS */
 
 .card {
-    margin-top: 20px;
+    margin: 20px auto;
     background-image: url('/darkness.png');
-    background-blend-mode: multiply;
-    /* background: radial-gradient(rgba(238, 189, 114, 1), rgba(238, 189, 114, .7)); */
     border-radius: 10px;
-    
+    color: white;
+    padding: 5px;
+    text-align: center;   
+}
+
+.card-text {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .two-btns {
-    border: .5px solid gray;
-    padding: 2px;
-    border-radius: 10px;
     display: flex;
     justify-content: space-around;
-    width: 100%;
+
 }
 
 .card-title>a {
@@ -127,8 +129,9 @@ textarea {
     text-align: center;
 }
 
-ol>li {
+li {
     list-style-position: inside;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -139,4 +142,8 @@ ol>li {
 
 .more-content {
     text-align: center;
+}
+
+.landing-text {
+    font-family: 'PT Sans'
 }

@@ -4,7 +4,7 @@
         <title>Get Lucid</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+
 <link rel="stylesheet" type="" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
 
    
@@ -33,19 +33,19 @@
     <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search tags..." name='search' aria-label="Search">
     <input type='submit' value='Search' class='btn'>
     </form>
-</div>
 
 
 
 
+<br>
 
-<div class=" card-columns">
+<div class="row">
         <%for(let i=0; i<tags.length; i++) { %>
-             <div class='card'>
-                <div class='card-body'>
-                    <h5 class='card-title'><a href='/dreamjournal/show/<%=tags[i].id%>/<%=sleepStatus%>'><%=tags[i].title%></a></h5>
+             <div class='col s4'>
+                <div class='card'>
+                    <h5><a href='/dreamjournal/show/<%=tags[i].id%>/<%=sleepStatus%>'><%=tags[i].title%></a></h5>
 
-                    <p class='card-text center'><%=tags[i].date%></p>
+                    <p class='card-text'><%=tags[i].date%></p>
                             <br>
 
                     <p class='card-text'><%=tags[i].content%></p>
@@ -66,5 +66,6 @@
           <%} %>
 </div>
 <%}%>
+</div>
 </body>
 </html>

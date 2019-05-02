@@ -17,10 +17,9 @@ sessions.post('/:choice', (req, res) => {
     console.log(req.body.username, 'req.body')
     User.findOne({ username: req.body.username }, (err, foundUser) => {
         console.log(foundUser + 'foundUser')
-        if (err) {
+        if (foundUser === null) {
             res.redirect(`/sessions/invalid/${sleepStatus}`)
-        }
-        if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+        } else if (bcrypt.compareSync(req.body.password, foundUser.password)) {
             req.session.currentUser = foundUser;
             res.redirect(`/home/${sleepStatus}`);
         } else {
