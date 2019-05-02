@@ -40,4 +40,4 @@ This site uses an Express Server with EJS and Mongoose for the backend. Method O
 - More interesting or psychedelic backgrounds, possibly add a button to make the background more interesting (trippy, counting sheep, calming moods etc)
 - Add music to go along with mood of background
 - Improve search ability to look for multiple tags
-
+- Add an interpret link to search a database for interpretations for dream themes
