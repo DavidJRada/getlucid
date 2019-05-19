@@ -23,14 +23,13 @@ Create New Dream page
 
 
 ##Technologies 
-This site uses an Express Server with EJS and Mongoose for the backend. Method Override is used for the Post and Delete routes. There is Bcrypt for encrypting passwords and express sessions to allow continuity for users after they log in.
+This site uses an Express Server with EJS and Mongoose for the backend. There is Bcrypt for encrypting passwords and express sessions to allow continuity for users after they log in.
 
 ##Difficulties
 
 - Figuring out how to pass the chosen css styling for the entire user experience
 - Users and sessions took a lot of thought and work to get it working, but much more could be done to make it more seamless and comprehensive
-- 
-
+  
 ##Future
 
 - Add a sleep tracker portion to track and display nightly sleep

@@ -149,3 +149,11 @@ li {
 .landing-text {
     font-family: 'PT Sans'
 }
+
+.extender {
+    height: 200px;
+}
+
+.landingButtons {
+    margin: 50px;
+}
