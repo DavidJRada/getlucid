@@ -19,6 +19,7 @@ This site uses an Express Server with EJS and Mongoose for the backend. There is
 ## Future
 
 - Add a sleep tracker portion to track and display nightly sleep
+- Add more descriptive error handling for log in issues
 - Include a modal on the home page to display one of the videos I have used or have them carousel through the videos by clicking a button to learn more
 - Reformat the date on the cards
 - Additional content on theories and research around Lucid Dreaming

@@ -13,7 +13,7 @@ html {
 nav {
     background-color: black;
     font-family: 'Permanent Marker';
-    font-size: 50px;
+    /* font-size: 50px; */
     font-weight: bold;
 }
 
@@ -30,11 +30,12 @@ h4 {
 
 .card {
     margin: 20px auto;
-    background-image: url('/weather.png');
+    /* background-image: url('/weather.png'); */
+    background-color: rgb(165, 191, 238);
     border-radius: 10px;
     color: black;
     padding: 5px;
-    text-align: center;   
+    text-align: center;  
 }
 
 .card-text {
@@ -129,3 +130,9 @@ li {
 .more-content {
     text-align: center;
 }
+
+/* @media only screen and (max-width: 548px) {
+    .nav-mobile {
+        font-size: 10px !important;
+    }
+} */

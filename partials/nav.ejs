@@ -1,7 +1,8 @@
 
-<nav>
+<nav class='nav-extended'>
     <div class='nav-wrapper'>
     <a href='/home/<%=sleepStatus%>' class='brand-logo left'>Get Lucid</a>
+
     <ul id='nav-mobile' class='right'>
         <%if(currentUser) {%>
             <li class='tab username'>Welcome <%=currentUser.username%></li>
@@ -17,3 +18,4 @@
         </ul>
         </div>
 </nav>
+
