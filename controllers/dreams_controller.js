@@ -57,7 +57,7 @@ router.get('/:choice', (req, res) => {
     }
 })
 
-
+//Tag Search
 router.get('/search/:choice', (req, res) => {
     sleepStatus = req.params.choice
     let currentUser = req.session.currentUser;

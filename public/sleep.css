@@ -114,7 +114,7 @@ textarea {
     max-width: 70%;
     max-height: 200px;
     border-bottom: 1px solid black;
-    color: white;
+    /* color: white; */
 }
 
 #new-header {
