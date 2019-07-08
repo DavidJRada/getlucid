@@ -17,12 +17,13 @@ nav {
     font-weight: bold;
 }
 
-h2 {
+h2, h3, h4 {
     font-family: 'Permanent Marker';
     text-align: center;
 }
 
-h4 {
+h5, h6 {
+    font-family: 'PT Sans';
     text-align: center;
 }
 
