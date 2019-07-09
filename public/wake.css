@@ -11,9 +11,9 @@ html {
 }
 
 nav {
+    padding-left: 5px;
     background-color: black;
     font-family: 'Permanent Marker';
-    /* font-size: 50px; */
     font-weight: bold;
 }
 
@@ -131,9 +131,3 @@ li {
 .more-content {
     text-align: center;
 }
-
-/* @media only screen and (max-width: 548px) {
-    .nav-mobile {
-        font-size: 10px !important;
-    }
-} */
